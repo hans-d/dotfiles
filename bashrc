@@ -1,12 +1,8 @@
 # defaults - load first
-source ~/.bash/default.conf
+. ~/.bash/default.conf
 
+. ~/.bash/looks.conf
+. ~/.bash/alias.conf
 
-source ~/.bash/ssh-agent.conf
-
-# dir-colors
-# https://github.com/seebi/dircolors-solarized
-eval `dircolors -b ~/.dir_colors`
-
-PROMPT_DIRTRIM=2
-source ~/.bash/prompt.conf
+. ~/.bash/clipboard.conf
+. ~/.bash/ssh-agent.conf
