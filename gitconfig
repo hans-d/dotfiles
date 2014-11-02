@@ -1,3 +1,5 @@
 [user]
 	email = hans.donner@pobox.com
 	name = Hans Donner
+[push]
+	default = simple
