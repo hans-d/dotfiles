@@ -1,0 +1,23 @@
+---
+
+# Keys for TMUX
+# =============
+
+
+
+
+plugins:
+
+ tpux-plugins/tpm:
+   install  : I
+   uninstall: U
+
+ tmux-plugins/resurrect:
+   @resurrect-save   : Ctrl-s 
+   @resurrect-restore: Ctrl-r
+
+
+future:
+ tmux-plugins/open:
+   @open       : o
+   @open-editor: Ctrl-o
