@@ -8,5 +8,5 @@ source ~/.bash/ssh-agent.conf
 # https://github.com/seebi/dircolors-solarized
 eval `dircolors -b ~/.dir_colors`
 
-PROMPT_DIRTRIM=3
+PROMPT_DIRTRIM=2
 source ~/.bash/prompt.conf
