@@ -1,0 +1,9 @@
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "no_copy/dircolors-solarized"]
+	path = no_copy/dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized.git
+[submodule "no_copy/tmux-colors-solarized"]
+	path = no_copy/tmux-colors-solarized
+	url = https://github.com/seebi/tmux-colors-solarized.git

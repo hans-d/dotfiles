@@ -140,3 +140,7 @@ if [ -f "${SSH_ENV}" ]; then
 else
     start_agent;
 fi
+
+# dir-colors
+# https://github.com/seebi/dircolors-solarized
+eval `dircolors -b ~/.dir_colors`
