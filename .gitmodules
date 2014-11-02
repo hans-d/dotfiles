@@ -7,3 +7,6 @@
 [submodule "no_copy/tmux-colors-solarized"]
 	path = no_copy/tmux-colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized.git
+[submodule "no_copy/solarized-mate-terminal"]
+	path = no_copy/solarized-mate-terminal
+	url = https://github.com/oz123/solarized-mate-terminal.git
