@@ -1,6 +1,6 @@
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
 [submodule "no_copy/dircolors-solarized"]
 	path = no_copy/dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized.git
