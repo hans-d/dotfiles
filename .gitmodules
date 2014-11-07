@@ -10,3 +10,6 @@
 [submodule "no_copy/solarized-mate-terminal"]
 	path = no_copy/solarized-mate-terminal
 	url = https://github.com/oz123/solarized-mate-terminal.git
+[submodule "emacs.d"]
+	path = emacs.d
+	url = git@github.com:hans-d/emacs.d.git
