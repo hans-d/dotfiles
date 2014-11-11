@@ -13,5 +13,7 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+. ~/.nvm/nvm.sh
 
+export PATH=${PATH}:~/sdk/android/platform-tools:~/sdk/android/tools
 export EDITOR=emacs
