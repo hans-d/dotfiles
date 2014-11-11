@@ -8,12 +8,11 @@
 . ~/.bash/ssh-agent.conf
 
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
+# add to path - if existing
+[ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
+[ -d "$HOME/sdk/android" ] && PATH=${PATH}:~/sdk/android/platform-tools:~/sdk/android/tools
 
-. ~/.nvm/nvm.sh
+# source - if existings
+[ -d "$HOME/.nvm" ] && . ~/.nvm/nvm.sh
 
-export PATH=${PATH}:~/sdk/android/platform-tools:~/sdk/android/tools
 export EDITOR=emacs
