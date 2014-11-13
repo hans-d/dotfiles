@@ -1,31 +1,24 @@
-(require 'package')
+;;; .emacs --- personal configuration
 
-; ====== melpa
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
-(when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+;; inspiration:
+;; - https://github.com/magnars/.emacs.d
+;; - https://github.com/sachac/.emacs.d
 
 
-; ====== auto load
-(load-file "~/.emacs.d/lisp/loaddefs.el")
+;; get more screen space asap
+(when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(setq inhibit-startup-screen t)
 
-; ====== packages
+;; load paths
 (add-to-list 'load-path "~/.emacs.d/rc")
-(require 'tmux-keys)
+
+(load "custom.el")
+
+(require 'init-packages)   ; basic package management utils
+(require 'init-look-feel)  ; general look n feel
+(require 'init-backup)
+(require 'init-edit-pref)
 
 
-; ====== auto-compile
-(defun autocompile nil
-  "compile itself if ~/.emacs"
-  (interactive)
-  (require 'bytecomp)
-  (let ((dotemacs (expand-file-name "~/.emacs")))
-    (if (string= (buffer-file-name) (file-chase-links dotemacs))
-      (byte-compile-file dotemacs))))
-
-(add-hook 'after-save-hook 'autocompile)
-
-; ====== end
-(package-initialize)
+; ====== end of manual

@@ -1,1 +1,2 @@
-EXCLUDES="*~ no_copy"
+EXCLUDES="**/*~ no_copy"
+SYMLINK_DIRS="emacs.d bash"
