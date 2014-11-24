@@ -8,6 +8,7 @@
 
 ;; load paths
 (add-to-list 'load-path "~/.emacs.d/rc")
+(add-to-list 'load-path "~/.emacs.d/src")
 (load "custom.el")
 
 (require 'init-package-load) ; basic package management utils
