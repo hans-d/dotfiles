@@ -1,0 +1,33 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+  echo "Usage : ${FUNCNAME[0]} start|stop|list [server-id]"
+  exit 1
+fi
+
+case "$1" in
+  start)
+    if [ $# -lt 2 ]; then
+      echo "missig server-id"
+      exit 1
+    fi
+    emacs --daemon=$2
+    ;;
+  end)
+    if [ $# -lt 2 ]; then
+      echo "missig server-id"
+      exit 1
+    fi
+    emacsclient -s $2 -e "(kill-emacs)"
+    ;;
+  list)
+    echo Found servers:
+    serverdir="${TMPDIR:-/tmp}/emacs${UID}"
+    for file in ${serverdir}/*; do
+      if [[ -S ${file} ]]; then
+        echo "  ${file##*/}"
+      fi
+    done
+    ;;
+  *) echo Unknown option "$1"
+esac
