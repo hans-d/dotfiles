@@ -13,7 +13,7 @@ case "$1" in
     fi
     emacs --daemon=$2
     ;;
-  end)
+  stop)
     if [ $# -lt 2 ]; then
       echo "missig server-id"
       exit 1
