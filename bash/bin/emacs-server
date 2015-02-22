@@ -8,14 +8,14 @@ fi
 case "$1" in
   start)
     if [ $# -lt 2 ]; then
-      echo "missig server-id"
+      echo "missing server-id"
       exit 1
     fi
-    emacs --daemon=$2
+    emacs --daemon=$2 -l ~/.emacs
     ;;
-  end)
+  stop)
     if [ $# -lt 2 ]; then
-      echo "missig server-id"
+      echo "missing server-id"
       exit 1
     fi
     emacsclient -s $2 -e "(kill-emacs)"
