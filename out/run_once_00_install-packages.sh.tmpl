@@ -1,0 +1,50 @@
+#!/bin/sh
+
+is_command() {
+        command -v "$1" >/dev/null
+}
+
+{{ if eq .chezmoi.os "darwin" -}}
+
+install_brew() {
+	if (is_command brew); then
+		return
+	fi
+	# will ask for sudo, installs CommandLineTools for Xcode
+	# uninstall: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+}
+
+install_nix() {
+	install_nix_core
+	install_nix_darwin
+}
+
+install_nix_core() {
+	if (is_command nix-shell); then
+		return
+	fi
+	sh -c "$(curl -L https://nixos.org/nix/install)"
+}
+
+install_nix_darwin() {
+	if (is_command darwin-rebuild); then
+		return
+	fi
+	nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer 
+	./result/bin/darwin-installer
+}
+
+main() {
+	install_brew
+	install_nix
+}
+
+{{ else if eq .chezmoi.os "linux" -}}
+
+main() {
+}
+
+{{ end -}}
+
+main

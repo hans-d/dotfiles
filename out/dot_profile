@@ -1,0 +1,7 @@
+# extra utils
+export PATH="~/.local/bin:$PATH"
+
+# no phone home
+export HOMEBREW_NO_ANALYTICS=1
+# no sudden updates during other actions, requires manual action to update
+export HOMEBREW_NO_AUTO_UPDATE=1
